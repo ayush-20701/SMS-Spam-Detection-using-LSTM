@@ -9,12 +9,14 @@ function App() {
     
     // Call your Flask API
     try {
+      // console.log(message);
+      
       const response = await fetch("http://127.0.0.1:5000/predict", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ text: message }),
+        body: JSON.stringify({ message }),
       });
 
       const data = await response.json();

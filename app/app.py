@@ -3,9 +3,11 @@ import tensorflow as tf
 from keras.preprocessing.sequence import pad_sequences
 import pickle
 import numpy as np
+from flask_cors import CORS
 
 # Initialize Flask app
 app = Flask(__name__)
+CORS(app)  # Allow all origins
 
 # Load the trained LSTM model
 model = tf.keras.models.load_model("app/models.h5")
